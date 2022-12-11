@@ -25,9 +25,6 @@ def uuid_from_dashboard_url(url):
 
 def formatiso(time: Union[str, int]):
     """
-    >>> _ = 'Changing the timezone';
-    ... __import__('os').environ['TZ'] = "+03:00"
-    ... time.tzset()
 
     >>> formatiso(0)
     '1970-01-01T00:00:00.000Z'
@@ -35,11 +32,12 @@ def formatiso(time: Union[str, int]):
     >>> formatiso('1970-01-01T00:00:00.000Z')
     '1970-01-01T00:00:00.000Z'
 
+    Timezone in the examples is +01:00
     >>> formatiso('13/12/2020')
-    '2020-12-12T21:00:00.000Z'
+    '2020-12-13T01:00:00.000Z'
 
     >>> formatiso('13/12/2020 20:00')
-    '2020-12-13T17:00:00.000Z'
+    '2020-12-13T21:00:00.000Z'
     """
     from datetime import datetime, timezone as tz
 
@@ -63,5 +61,8 @@ def csv_from_zip(bytes_):
 
 
 if __name__ == '__main__':
+    'Changing the timezone to +1';
+    __import__('os').environ['TZ'] = "+01:00"
+    time.tzset()
     import doctest
     doctest.testmod()

@@ -32,3 +32,4 @@ def test_load_medm():
         os.getenv('MEDM_EMAIL'),
         os.getenv('MEDM_PASSW')
     )
+    result,

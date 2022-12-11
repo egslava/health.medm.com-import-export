@@ -23,7 +23,10 @@ load_medm(
     to_date='2022-12-05T20:59:59.999Z',
     type_='bloodpressure'
 )
+```
 
+```csv
+'Medical record,Medical record email,Medical record name,Medical record birthday,Medical record external id label,Medical record external,Medical record provider,Id,Measured at local time,Systolic,Diastolic,Pulse,Body position,Cuff position,Cuff position status,Cuff dressed,Irregular pulse,Measured arm,Measurement postion quality,Movement during measurement,Pulse range,Feeling,Note,Source,Client\n86135c4c-b705-416d-a00c-afda45a753f0,medm@egslava.ru,Medm Developer,-,,,,6befb084-c44d-4ad4-862d-cb7e8bde321d,2022-12-10 10:15:07 +0300,220,110,100,Supine,"","","",Detected,Left,"","","",Bad,Bad,Manual Entry,"{""app_instance_id"":""0f30b004-84e8-481b-88fc-ab1cc97ef3c6"",""app_id"":""medm_bp"",""app_name"":""Blood Pressure"",""app_version"":""2.12.361.95"",""app_utc_offset"":10800,""app_locale"":""en-RU"",""os_family"":""iOS"",""os_version"":""15.7.1"",""os_version_number"":""0"",""os_platform_info"":{""name"":""iPhone"",""model"":""iPhone"",""device"":""iPhone9,3"",""systemName"":""iOS"",""systemVersion"":""15.7.1"",""localizedModel"":""iPhone""},""mobile_equipment"":{}}"\n86135c4c-b705-416d-a00c-afda45a753f0,medm@egslava.ru,Medm Developer,-,,,,0e6acaf9-a726-45c8-b9fc-b52eca841ec4,2022-12-10 10:14:04 +0300,120,70,60,Sitting,"","","",Not detected,Right,"","","",Good,Good,Manual Entry,"{""app_instance_id"":""0f30b004-84e8-481b-88fc-ab1cc97ef3c6"",""app_id"":""medm_bp"",""app_name"":""Blood Pressure"",""app_version"":""2.12.361.95"",""app_utc_offset"":10800,""app_locale"":""en-RU"",""os_family"":""iOS"",""os_version"":""15.7.1"",""os_version_number"":""0"",""os_platform_info"":{""name"":""iPhone"",""model"":""iPhone"",""device"":""iPhone9,3"",""systemName"":""iOS"",""systemVersion"":""15.7.1"",""localizedModel"":""iPhone""},""mobile_equipment"":{}}"\n'
 ```
 
 `dateutil.parse` is used for date format parsing, so

@@ -32,7 +32,7 @@ jobs:
           # using some virtual environment
           cd ./soft
           python3 -m pip install .[test]
-          pytest --doctest-modules
+          pytest --doctest-modules -m "realrequest"
 
       - name: 'pip-check'
         env:
