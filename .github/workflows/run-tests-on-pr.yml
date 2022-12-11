@@ -26,13 +26,22 @@ jobs:
           python-version: ${{ matrix.python_version }}
 
       - name: "run-tests"
+        env:
+          MEDM_EMAIL: ${{ secrets.MEDM_EMAIL }}
+          MEDM_PASSW: ${{ secrets.MEDM_PASSW }}
         run: |
           # we dont' create venv, since in, in fact,
           # using github actions we're already 
           # using some virtual environment
           cd ./soft
           python3 -m pip install .[test]
-          pytest --doctest-modules -m "realrequest"
+          
+          # not x or x is meaningful, since, by default
+          # not realrequest is used to run tests to 
+          # avoid spamming medm servers meanwhile, 
+          # just "realrequest" will run only 
+          # 'realrequest'
+          pytest --doctest-modules -m "not realrequest or realrequest"
 
       - name: 'pip-check'
         env:
@@ -41,4 +50,4 @@ jobs:
         run: |
           echo ${{ env.USER }}
           echo ${{ env.TOKEN }}
-          python3 -m pip install git+https://${{ env.USER }}:${{ env.TOKEN }}@github.com/joboff/cover-letter-generator.git@develop#subdirectory=soft
+          python3 -m pip install git+https://${{ env.USER }}:${{ env.TOKEN }}@github.com/egslava/pymedm.git@develop#subdirectory=soft
