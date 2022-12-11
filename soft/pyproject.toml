@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src"
+]
+markers = [
+    "realrequest: send real requests to Medm",
+]
+addopts = '--doctest-modules -m "not realrequest"'
+
+
+[project]
+name = "pymedm"
+version = "0.0.1"
+authors = [
+    { name = "Viacheslav Egorenkov", email = "egslava@gmail.com" },
+]
+description = """
+A fetcher/parser for health.medm.com.
+ It allows you to access blood pressure, sugar level,
+ heart rhythm and so on from your python app.
+ """
+
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+
+dependencies = [
+    "requests",
+    "python-dateutil",
+    "python-dotenv"
+]
+
+# for future references:
+# https://stackoverflow.com/a/69977707
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/egslava/pymedm"
+"Bug Tracker" = "https://github.com/egslava/pymedm/issues"
