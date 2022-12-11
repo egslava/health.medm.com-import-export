@@ -1,3 +1,4 @@
+import sys
 from io import BytesIO
 from typing import Union
 import time
@@ -60,8 +61,8 @@ def csv_from_zip(bytes_):
             return f.read()
 
 
-if __name__ == '__main__':
-    'Changing the timezone to +1';
+if __name__ == '__main__' or 'pytest' in sys.modules:
+    # Changing the timezone to +1
     __import__('os').environ['TZ'] = "+01:00"
     time.tzset()
     import doctest
